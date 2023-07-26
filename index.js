@@ -47,7 +47,7 @@ let week = [
   "Wednesday",
   "Thursday",
   "Friday",
-  "Saturday"
+  "Saturday",
 ];
 let dayOfWeek = week[dates];
 let hours = now.getHours();
