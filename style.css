@@ -56,3 +56,7 @@ li {
 #current {
   background-color: green;
 }
+#footer {
+  color: grey;
+  font-size: small;
+}
