@@ -10,12 +10,24 @@ function searchCity(city) {
   axios.get(apiUrl).then(showTemperature);
 }
 function showTemperature(response) {
-  let showtemperature = Math.round(response.data.main.temp) + "℃";
+  let showtemperature = Math.round(response.data.main.temp);
   let temperature = document.querySelector(".temperature");
   temperature.innerHTML = showtemperature;
 
   let showCityName = document.querySelector("#city");
   showCityName.innerHTML = response.data.name;
+
+  let showDescription = document.querySelector("#Description");
+  showDescription.innerHTML = response.data.weather[0].description;
+
+  let showHumidity = document.querySelector("#Humidity");
+  showHumidity.innerHTML = `Humidity: ${response.data.main.humidity}%`;
+
+  //let showWind = document.querySelector("#Wind");
+  //showWind.innerHTML = `Wind: ${response.data.wind.speed}m/s`;
+
+  //let showClouds = document.querySelector("#Clouds");
+  //showClouds.innerHTML = `Clouds: ${response.data.clouds.all}%`;
 }
 let buttonSearch = document.querySelector("#search");
 buttonSearch.addEventListener("click", search);
