@@ -29,6 +29,8 @@ function showTemperature(response) {
   let showHumidity = document.querySelector("#Humidity");
   showHumidity.innerHTML = `Humidity: ${response.data.main.humidity}%`;
 
+  celsTemp = Math.round(response.data.main.temp);
+
   //let showWind = document.querySelector("#Wind");
   //showWind.innerHTML = `Wind: ${response.data.wind.speed}m/s`;
 
@@ -76,3 +78,20 @@ if (minutes < 10) {
 } else {
   data.innerHTML = `${dayOfWeek} ${hours}:${minutes}`;
 }
+let celsTemp = null;
+function displayfarhrenheiTemp(event) {
+  event.preventDefault();
+  let fahrTemp = (celsTemp * 9) / 5 + 32;
+  let tempselector = document.querySelector(".temperature");
+  tempselector.innerHTML = Math.round(fahrTemp);
+}
+function displaycelsiumTemp(event) {
+  event.preventDefault();
+  let tempselector = document.querySelector(".temperature");
+  tempselector.innerHTML = celsTemp;
+}
+
+let fahrlink = document.querySelector("#fahr");
+fahrlink.addEventListener("click", displayfarhrenheiTemp);
+let celslink = document.querySelector("#cels");
+celslink.addEventListener("click", displaycelsiumTemp);
