@@ -35,6 +35,19 @@ li {
 
   border-radius: 10px;
 }
+.weather-forecast {
+  text-align: center;
+  margin-top: 20px;
+  color: #000;
+}
+.weather-forecast-date {
+  opacity: 0.6;
+  font-size: 15px;
+}
+.weather-forecast-temperatures {
+  opacity: 0.6;
+  font-size: 12px;
+}
 
 .weather-icon {
   height: 64px;

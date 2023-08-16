@@ -33,7 +33,7 @@ function showTemperature(response) {
   celsTemp = Math.round(response.data.main.temp);
 
   let showWind = document.querySelector("#Wind");
-  showWind.innerHTML = `Wind: ${roundWind} m/s`;
+  showWind.innerHTML = `Wind: ${roundWind} Km/H`;
 
   let showClouds = document.querySelector("#Clouds");
   showClouds.innerHTML = `Clouds: ${response.data.clouds.all}%`;
@@ -91,8 +91,106 @@ function displaycelsiumTemp(event) {
   let tempselector = document.querySelector(".temperature");
   tempselector.innerHTML = celsTemp;
 }
+//displayForecast();
 
 let fahrlink = document.querySelector("#fahr");
 fahrlink.addEventListener("click", displayfarhrenheiTemp);
 let celslink = document.querySelector("#cels");
 celslink.addEventListener("click", displaycelsiumTemp);
+/**function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = `<div class="row">
+        <div class="col-2">
+          <div class="weather-forecast-date">
+Monday
+          </div>
+          <img
+                  src="https://openweathermap.org/img/wn/10d@2x.png"
+                  alt="Cloudy icon"
+                  class="weather-icon float-left"
+                  id = "icon1";
+                />
+          <div class="weather-forecast-temperatures">
+            <span class="weather-forecast-temperature-min">16C</span>
+            <span class="weather-forecast-temperature-min">20C</span>
+          </div>
+        </div>
+        <div class="col-2">
+            <div class="weather-forecast-date">
+              Tuesday
+          </div>
+            <img
+                  src="https://openweathermap.org/img/wn/10d@2x.png"
+                  alt="Cloudy icon"
+                  class="weather-icon float-left"
+                  id = "icon2";
+                />
+            <div class="weather-forecast-temperatures">
+            <span class="weather-forecast-temperature-min">16C</span>
+            <span class="weather-forecast-temperature-min">20C</span>
+          </div>
+                
+          </div>
+          <div class="col-2">
+            <div class="weather-forecast-date" id="forecast">
+              Wednesday
+          </div>
+              <img
+                  src="https://openweathermap.org/img/wn/10d@2x.png"
+                  alt="Cloudy icon"
+                  class="weather-icon float-left"
+                  id = "icon3";
+                />
+              <div class="weather-forecast-temperatures">
+            <span class="weather-forecast-temperature-min">16C</span>
+            <span class="weather-forecast-temperature-min">20C</span>
+          </div>
+            </div>
+            <div class="col-2">
+              <div class="weather-forecast-date">
+              Thursday
+          </div>
+                <img
+                  src="https://openweathermap.org/img/wn/10d@2x.png"
+                  alt="Cloudy icon"
+                  class="weather-icon float-left"
+                  id = "icon4";
+                />
+                <div class="weather-forecast-temperatures">
+            <span class="weather-forecast-temperature-min">16C</span>
+            <span class="weather-forecast-temperature-min">20C</span>
+          </div>
+              </div>
+              <div class="col-2">
+              <div class="weather-forecast-date">
+              Friday
+          </div>
+                <img
+                  src="https://openweathermap.org/img/wn/10d@2x.png"
+                  alt="Cloudy icon"
+                  class="weather-icon float-left"
+                  id = "icon5";
+                />
+                <div class="weather-forecast-temperatures">
+            <span class="weather-forecast-temperature-min">16C</span>
+            <span class="weather-forecast-temperature-min">20C</span>
+          </div>
+              </div>
+              <div class="col-2">
+              <div class="weather-forecast-date">
+              Saturday
+          </div>
+                <img
+                  src="https://openweathermap.org/img/wn/10d@2x.png"
+                  alt="Cloudy icon"
+                  class="weather-icon float-left"
+                  id = "icon6";
+                />
+                <div class="weather-forecast-temperatures">
+            <span class="weather-forecast-temperature-min">16C</span>
+            <span class="weather-forecast-temperature-min">20C</span>
+          </div>
+              </div>
+            </div>`;
+          } 
+            */
