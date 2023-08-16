@@ -10,6 +10,7 @@ function searchCity(city) {
   axios.get(apiUrl).then(showTemperature);
 }
 function showTemperature(response) {
+  let roundWind = Math.round(response.data.wind.speed);
   let showtemperature = Math.round(response.data.main.temp);
   let temperature = document.querySelector(".temperature");
   temperature.innerHTML = showtemperature;
@@ -31,11 +32,11 @@ function showTemperature(response) {
 
   celsTemp = Math.round(response.data.main.temp);
 
-  //let showWind = document.querySelector("#Wind");
-  //showWind.innerHTML = `Wind: ${response.data.wind.speed}m/s`;
+  let showWind = document.querySelector("#Wind");
+  showWind.innerHTML = `Wind: ${roundWind} m/s`;
 
-  //let showClouds = document.querySelector("#Clouds");
-  //showClouds.innerHTML = `Clouds: ${response.data.clouds.all}%`;
+  let showClouds = document.querySelector("#Clouds");
+  showClouds.innerHTML = `Clouds: ${response.data.clouds.all}%`;
 }
 let buttonSearch = document.querySelector("#search");
 buttonSearch.addEventListener("click", search);
